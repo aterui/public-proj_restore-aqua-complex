@@ -71,7 +71,7 @@ df_emerge_ws <- df_emerge %>%
                  date_labels = "%b-%Y"))
 
 ggsave(figure_emerge,
-       filename = "output/figure_emg.tif",
+       filename = "output/figure_emg.png",
        height = 7,
        width = 6.5)
 
@@ -146,7 +146,7 @@ df_rho_pred <- list_rho[[2]]
 figure_cv_rho <- figure_cv / figure_rho
 
 ggsave(figure_cv_rho,
-       filename = "output/figure_cv_rho.tif",
+       filename = "output/figure_cv_rho.png",
        height = 6,
        width = 6)
 
@@ -204,7 +204,7 @@ df_bat <- readRDS("data_fmt/data_bat_fit.rds")
           panel.grid.minor = element_blank()))
 
 ggsave(figure_bat_habitat,
-       filename = "output/figure_bat_habitat.tif",
+       filename = "output/figure_bat_habitat.png",
        height = 3.5,
        width = 8)
 
