@@ -21,7 +21,6 @@
 
 % for special characters in bibliography            
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 
 % citation setup
 \usepackage[euler]{textgreek}
@@ -30,7 +29,7 @@
 \bibliographystyle{bioconv}
 
 % caption setup
-\usepackage[font={f, small}, labelfont={bf, small}]{caption}
+\usepackage[font=small, labelfont={bf, small}]{caption}
            
 % color box
 \usepackage[most]{tcolorbox}
@@ -217,7 +216,7 @@ Ephemeroptera was present but rare in streams (< 0.01).
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\textwidth]{output/figure_emg.png}
+    \includegraphics[width=0.75\textwidth]{figure_emg.png}
     \caption{Temporal patterns of aquatic insect emergence flux at the two restored sites in Peabody Park. Each site encompassed one stream and one constructed wetland in proximity ($\le$ 20 m apart), and these sites are located within closed (left column) and open areas (right column).
     The rows distinguish the order of emerging aquatic insects (total emergence, Ephemeroptera, Trichoptera, Diptera).
     The shade denotes the period that was not used for our analysis (after October 31, 2021).}
@@ -229,7 +228,24 @@ Peak insect emergence in streams happened earlier than in wetlands (from March t
 Diptera, the dominant taxonomic group, emerged at different times between aquatic habitats (Figure \ref{fig:insect-phenology}), creating the overall asynchronous pattern of the total emergence flux.
 Additionally, in the closed area, Trichoptera exhibited a sharp emergence peak in July in the stream (Figure \ref{fig:insect-phenology}).
 
-\input{tex/table_emg}
+% \input{tex/table_emg}
+\begin{table}[ht]
+\centering
+\caption{Temporal average and standard deviation (SD) of aquatic insect emergence flux (wet mass [mg m$^{-2}$ day$^{-1}$]) from March to October in 2021.} 
+\label{tab:emg}
+\begingroup\small
+\begin{tabular}{llcc}
+  \hline
+Area & Habitat & Average & SD \\ 
+  \hline
+Closed & Stream & 60.2 & 78.7 \\ 
+   & Wetland & 25.6 & 36.0 \\ 
+  Open & Stream & 36.8 & 43.2 \\ 
+   & Wetland & 43.3 & 39.8 \\ 
+   \hline
+\end{tabular}
+\endgroup
+\end{table}
 
 The phenological asynchrony between aquatic habitats produced a portfolio effect.
 The observed CV of emergence flux (all taxa combined) summed across wetland and stream habitats (orange filled circle in Figure \ref{fig:cv-emergence}) was substantially lower than the predicted CV (orange open circle in Figure \ref{fig:cv-emergence}), a temporal variability that would be expected from a single habitat type alone.
@@ -240,7 +256,7 @@ This pattern was consistent across sites (Figure \ref{fig:cv-emergence}).
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.6\textwidth]{output/figure_cv_rho.png}
+    \includegraphics[width=0.6\textwidth]{figure_cv_rho.png}
     \caption{Wetland-stream complex stabilizes the temporal dynamics of aquatic insect emergence. Panels discern site openness (left column: closed, right column: open) and statistical metrics of temporal dynamics (top row: coefficient of variation [CV], bottom row: seasonality metric $\rho$). Filled circles represent the observed CV or $\rho$ in the respective habitats, while open circles denote the ``predicted'' values of CV or $\rho$, calculated as a weighted mean across stream and wetland habitats. The predicted values reflect expected temporal variability or seasonality under the assumption of perfect synchronization of emergence fluxes across habitats. A reduction in the observed CV or $\rho$ relative to the predicted ones indicates enhanced temporal stability (CV) or reduced seasonality ($\rho$) in resource supply, surpassing what would be expected from a single habitat type alone.}
     \label{fig:cv-emergence}
 \end{figure}
@@ -258,14 +274,33 @@ In contrast, temporal patterns of bat activity in the closed area differed signi
 Bat activity was considerably lower in the closed area, with no substantial differences between restored and control sites (Figure \ref{fig:bat-activity}).
 These findings highlight the context-dependence of restoration effects.
 
-\input{tex/table_gam}
+%\input{tex/table_gam}
+\begin{table}[ht]
+\centering
+\caption{Estimated effects of linear predictors in the generalized additive model (GAM).
+             Wald p-values were calculated using z-scores derived from the slope estimates and their standard errors (SE).} 
+\label{tab:gam-est}
+\begingroup\small
+\begin{tabular}{lccc}
+  \hline
+Variable & Estimate & SE & P value \\ 
+  \hline
+Intercept & $2.64$ & 0.11 & $<0.001$ \\ 
+  Restoration (wetland + stream vs. stream only) & $-0.59$ & 0.15 & $<0.001$ \\ 
+  Openness (open vs. closed) & $2.22$ & 0.15 & $<0.001$ \\ 
+  Restoration $\times$ Openness & $1.12$ & 0.21 & $<0.001$ \\ 
+   \hline
+\end{tabular}
+\endgroup
+\end{table}
+
 
 Importantly, these effects of the linear predictors remain significant after adjusting for seasonality through smoothing terms in our GAM (see Methods).
 This confirms that our results are not confounded by seasonal variations in bat activity.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.95\textwidth]{output/figure_bat_habitat.png}
+    \includegraphics[width=0.95\textwidth]{figure_bat_habitat.png}
     \caption{Bat activity increased at the restored sites (orange; wetland + stream) relative to the control sites (blue; stream only), but this enhancement was dependent on site openness (panel). Dots represent the observed counts of bat detections, while the lines indicate the predicted values from the generalized additive model, along with their associated standard errors. The shade denotes the period that was not used for our analysis (before March 1 and after October 31).}
     \label{fig:bat-activity}
 \end{figure}
