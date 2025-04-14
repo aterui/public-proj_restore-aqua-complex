@@ -178,7 +178,7 @@ While the temporal CV provides insights into variability in insect emergence, it
 To address this, we also calculated circular statistics \citep{nash_latitudinal_2023, staggemeier_circular_2020}.
 Specifically, we converted the months of emergence into angles on a unit circle to appropriately reflect the cyclical nature of seasons: January through October corresponded to angles from $0^\circ$ to $315^\circ$ in $45^\circ$ increments.
 We sampled a vector of angle values proportional to monthly emergence flux (wet mass) to approximate the temporal patterns of emergence.
-Then, using the R package \textit{circular} \citep{circular}, we calculated the seasonality metric $\rho$, which quantifies the degree of temporal clustering around the mean angle.
+Then, using the R package \textit{circular} \citep{agostinelli_r_2024}, we calculated the seasonality metric $\rho$, which quantifies the degree of temporal clustering around the mean angle.
 Values of $\rho$ range from 0 (no seasonality) to 1 (strong seasonality).
 As with CV, we calculated $\rho$ for total emergence flux across wetland and stream habitats and compared these values with the predicted values.
 This comparison allows us to document how the degree of seasonality in insect emergence changes when stream and wetland habitats are combined.
@@ -372,6 +372,6 @@ Further studies that extend our findings to other regions or ecosystems may yiel
 
 \newpage
 
-\bibliography{tex/references, tex/ref_package}
+\bibliography{tex/references}
 
 \end{document}
