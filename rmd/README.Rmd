@@ -1,0 +1,66 @@
+---
+title: "README"
+output: github_document
+knit: (function(inputFile, encoding) {
+        rmarkdown::render(inputFile,
+                          encoding = encoding, 
+                          output_dir = here::here())
+      })
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE)
+
+pacman::p_load(tidyverse,
+               sf)
+```
+
+# Article Information
+
+**Tentative title**: Restoration of aquatic habitat complex extends the foraging window of terrestrial consumers
+
+**Authors**: Ibrahim M, Petric R, Wahl C, Terui A
+
+# Analysis Flow
+
+## Aquatic Insect Emergence
+
+Script `analysis_emg_cv.R` runs analysis to calculate temporal CVs.
+Data is sourced from `data_raw/data_emg_v_0_2_0.csv`, which was formatted in `format_emg_data.R`.
+
+## Bat Activity Analysis
+
+Script `analysis_bat_gam.R` runs the Generalized Additive Model.
+Data is sourced from `data_raw/data_bat.csv`, which was formatted in `format_bat_data.R`.
+
+# Data Sources
+
+## File Description
+
+```{r src}
+
+setwd(str_remove(normalizePath("."), "\\\\rmd"))
+source("rmd/table_readme.R")
+
+knitr::kable(df_fnm)
+```
+
+## Column Description
+
+```{r column}
+
+options(knitr.kable.NA = "")
+knitr::kable(df_cnm)
+
+```
+
+# Session Information
+
+```{r}
+
+source(here::here("code/library.R"))
+sessionInfo()
+
+```

@@ -1,0 +1,80 @@
+\documentclass[11pt, class=article, crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage[T1]{fontenc} % for font setting
+\usepackage{newtxtext,newtxmath}
+\usepackage{import,
+            graphicx,
+            parskip,
+            url,
+            amsmath,
+            wrapfig,
+            fancyhdr,
+            soul,
+            tabularx,
+            authblk,
+            textcomp,
+            lineno}
+
+% side caption figure
+\usepackage{sidecap}
+\sidecaptionvpos{figure}{t}
+
+% for special characters in bibliography            
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% citation setup
+\usepackage[euler]{textgreek}
+\usepackage[sort&compress]{natbib}
+\setcitestyle{semicolon}
+\bibliographystyle{bioconv}
+
+% caption setup
+\usepackage[font={f, small}, labelfont={bf, small}]{caption}
+           
+% color box
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{breakable}
+
+% margin
+\usepackage[top=2.54cm, bottom=2.54cm, left=2.54cm, right=2.54cm]{geometry}%set margin
+
+% title
+\title{Restoration of aquatic habitat complex extends the foraging window of terrestrial consumers}
+\date{} % remove date from title
+
+% author list
+\author[1, a]{Mason Ibrahim}
+\author[2]{Radmila Petric}
+\author[1, b]{Charles F. Wahl}
+\author[1, *]{Akira Terui}
+
+\affil[1]{Department of Biology, University of North Carolina at Greensboro}
+\affil[2]{Institute for the Environment, University of North Carolina at Chapell Hill}
+\affil[a]{Current Affiliation: Nicholas School of the Environment, Duke University}
+\affil[b]{Current Affiliation: Colorado Water Science Center, U. S. Geological Survey}
+\affil[*]{Corresponding Author: hanabi0111\@gmail.com}
+
+\begin{document}
+
+\maketitle
+
+\section*{Acknowledgements}
+We thank many undergraduate and graduate students who helped with our fieldwork.
+This work is based on the materials supported by startup funds (to AT) and the Undergraduate Research and Creativity Awards (to MI) at the University of North Carolina at Greensboro.
+
+\section*{Conflict of Interest}
+
+None declared.
+
+\section*{Data availability}
+
+Data and codes will be available at \url{https://github.com/mni1220/public-proj_uncg_wetland} upon acceptance.
+
+\section*{Author Contributions}
+
+AT conceived the research project.
+MI, RP, CFW, and AT collected data, and MI performed data analysis with inputs from AT and RP.
+MI wrote the first draft, and all authors contributed significantly to the conception and improvement of the manuscript. 
+
+\end{document}

@@ -1,0 +1,10 @@
+pacman::p_load(tidyverse,
+               mgcv,
+               foreach,
+               ggpubr,
+               cowplot,
+               ggthemes,
+               MuMIn,
+               xtable,
+               patchwork,
+               circular)
